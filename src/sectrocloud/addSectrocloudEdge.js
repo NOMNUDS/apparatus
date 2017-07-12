@@ -23,7 +23,7 @@ module.exports = function addComponent (
       (trgNodeCpt === 'goal' || trgNodeCpt === 'cloud service')):
         addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'dependency')
         break
-      //  requires(G|R,R|CS)
+      //  dependency(G|R,R|CS)
       case ((srcNodeCpt === 'goal' || srcNodeCpt === 'cloud service') &&
       (trgNodeCpt === 'actor' || trgNodeCpt === 'cloud actor' ||
       trgNodeCpt === 'malicious actor')):
@@ -80,7 +80,7 @@ module.exports = function addComponent (
         addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'permeates')
         break
       //  requires(CS,CS|R|VR|IN|PI)
-      case (srcNodeCpt === 'cloud service' && (trgNodeCpt === 'resource' ||
+      case ((srcNodeCpt === 'cloud service' || srcNodeCpt === 'goal') && (trgNodeCpt === 'resource' ||
       trgNodeCpt === 'cloud service' || trgNodeCpt === 'virtual resource' ||
       trgNodeCpt === 'physical infrastructure' || trgNodeCpt === 'infrastructure node')):
         addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'requires')

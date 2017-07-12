@@ -50,7 +50,7 @@ module.exports = function addsectrocloudComponent (cy, component) {
               label: `${component}`,
               info: {
                 description: '',
-                type:'',
+                Type:'',
                 concept: 'cloud actor'
               },
 
@@ -74,7 +74,10 @@ module.exports = function addsectrocloudComponent (cy, component) {
               id: `n${lastNode}`,
               label: `${component}`,
               info: {
-                description: '',
+                description:'',
+                Capability: '',
+                DeploymentModel: '',
+                ServiceModel: '',
                 concept: 'cloud service'
               },
               position: {
@@ -93,6 +96,9 @@ module.exports = function addsectrocloudComponent (cy, component) {
               label: `${component}`,
               info: {
                 description: '',
+                AttackMethod: '',
+                VulnerabilityMetric: '',
+                SecurityProperty: '',
                 concept: 'vulnerability'
               },
               position: {
@@ -111,6 +117,8 @@ module.exports = function addsectrocloudComponent (cy, component) {
               label: `${component}`,
               info: {
                 description: '',
+                ObjectiveMetric: '',
+                SecurityProperty: '',
                 concept: 'security objective'
               },
               position: {
@@ -129,6 +137,13 @@ module.exports = function addsectrocloudComponent (cy, component) {
               label: `${component}`,
               info: {
                 description: '',
+                Value: '',
+                SecurityProperty: '',
+                Type: '',
+                Vendor: '',
+                Version: '',
+                ResourceType: '',
+                visibility: '',
                 concept: 'virtual resource'
               },
 
@@ -148,6 +163,12 @@ module.exports = function addsectrocloudComponent (cy, component) {
               label: `${component}`,
               info: {
                 description: '',
+                Value: '',
+                SecurityProperty: '',
+                Type: '',
+                Vendor: '',
+                Version: '',
+                location: '',
                 concept: 'physical infrastructure'
               },
               position: {
@@ -166,6 +187,13 @@ module.exports = function addsectrocloudComponent (cy, component) {
               label: `${component}`,
               info: {
                 description: '',
+                Value: '',
+                SecurityProperty: '',
+                Type: '',
+                Vendor: '',
+                Version: '',
+                ResourceType: '',
+                Tenancy: '',
                 concept: 'infrastructure node'
               },
               position: {
@@ -200,6 +228,11 @@ module.exports = function addsectrocloudComponent (cy, component) {
               label: `${component}`,
               info: {
                 description: '',
+                Value:'',
+                SecurityProperty: '',
+                Type: '',
+                Vendor: '',
+                Version: '',
                 concept: 'resource'
               },
               position: {
@@ -217,7 +250,8 @@ module.exports = function addsectrocloudComponent (cy, component) {
               label: `${component}`,
               info: {
                 description: '',
-                objective: '',
+                SecurityProperty: '',
+                SecurityRequirement: '',
                 concept: 'security constraint'
               },
               position: {
@@ -235,6 +269,8 @@ module.exports = function addsectrocloudComponent (cy, component) {
               label: `${component}`,
               info: {
                 description: '',
+                MechanismMetric: '',
+                SecurityProperty: '',
                 concept: 'security mechanism'
               },
               position: {
@@ -252,6 +288,7 @@ module.exports = function addsectrocloudComponent (cy, component) {
               label: `${component}`,
               info: {
                 description: '',
+                SecurityProperty: '',
                 concept: 'threat'
               },
               position: {
@@ -446,7 +483,7 @@ module.exports = function addsectrocloudComponent (cy, component) {
     //       label: `${component}`,
     //       info: {
     //         description: '',
-    //         type: '',
+    //         Type: '',
     //         concept: 'threat'
     //       },
     //       position: {
