@@ -22,6 +22,8 @@ const dgnState = require('./src/design-state/dgnState.js')
 const imp = require('./src/implementation/implementation.js')
 // require implementation-state modules
 const impState = require('./src/implementation-state/impState.js')
+// require sectropcloud-state modules
+const sectrocloud = require('./src/sectrocloud/sectrocloud.js')
 // configuration for the graphs style
 const graphStyle = require(`./style/graphStyle.js`)
 
@@ -119,7 +121,7 @@ const dgnPath = 'design.html'
 const dgnStatePath = 'design-state.html'
 const impPath = 'implementation.html'
 const impStatePath = 'implementation-state.html'
-
+const sectrocloudPath = 'sectrocloud.html'
 // store the last word of the window path to make it cross plaform
 // blame chromium and its Posix paths on windows for this ugliness
 const pathLocation = window.location.pathname.split('/').pop()
@@ -158,7 +160,17 @@ if (pathLocation === dgnPath) {
   impState.validate(cy)
   impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
 }
-
+  // Sectro stuff TO CJHANGE
+  else if (pathLocation === sectrocloudPath) {
+  sectrocloud.addNode(cy)
+  sectrocloud.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+  sectrocloud.threatVerify(cy)
+  sectrocloud.overview(cy)
+  sectrocloud.validate(cy)
+  sectrocloud.moduleGroup(cy)
+  sectrocloud.vulnVerify(cy)
+  sectrocloud.findVulnerabilities(cy)
+}
 // declaration of global buttons
 
 // highlights only the selected node class
