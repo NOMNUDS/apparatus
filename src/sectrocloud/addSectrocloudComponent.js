@@ -3,188 +3,477 @@
 // add components in the graph
 
 // TODO needs refactoring
-module.exports = function addDgnComponent (cy, component) {
+module.exports = function addsectrocloudComponent (cy, component) {
   let lastNode = cy.nodes().length + 1
   // let nodeInfo = {}
 
   switch (component) {
-    case 'thing':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            component: '',
-            concept: 'thing'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      })
-      break
-    case 'micronet':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            purpose: '',
-            concept: 'micronet'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      })
-      break
-    case 'information':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            concept: 'information'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      })
-      break
-    case 'net':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            concept: 'net'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      })
-      break
-    case 'actor':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            intent: '',
-            concept: 'actor'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      }).addClass('selection')
-      break
-    case 'malicious actor':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            intent: '',
-            concept: 'malicious actor'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      })
-      break
-    case 'asset':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            concept: 'asset'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      })
-      break
-    case 'constraint':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            property: '',
-            concept: 'constraint'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      })
-      break
-    case 'threat':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            type: '',
-            concept: 'threat'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      })
-      break
-    case 'sensor':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            concept: 'sensor'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      })
-      break
+    case 'goal':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'goal'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('goal')
+          break
+        case 'actor':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'actor'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('actor')
+          break
+        case 'cloud-actor':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                type:'',
+                concept: 'cloud actor'
+              },
+
+                // shape: TRIANGLE,
+
+              // background: {
+              //   background-color
+              // }
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('cloud-actor')
+          break
+
+        case 'cloud-service':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'cloud service'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('cloud-service')
+          break
+
+        case 'vulnerability':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'vulnerability'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('vulnerability')
+          break
+
+        case 'security-objective':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'security objective'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('security-objective')
+          break
+
+        case 'virtual-resource':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'virtual resource'
+              },
+
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('virtual-resource')
+          break
+
+        case 'physical-infrastructure':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'physical infrastructure'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('physical-infrastructure')
+          break
+
+        case 'infrastructure-node':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'infrastructure node'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('infrastructure-node')
+          break
+        case 'malicious-actor':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'malicious actor'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('malicious-actor')
+          break
+        case 'resource':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'resource'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('resource')
+          break
+        case 'security-constraint':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                objective: '',
+                concept: 'security constraint'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('security-constraint')
+          break
+        case 'security-mechanism':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'security mechanism'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('security-mechanism')
+          break
+        case 'threat':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'threat'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('threat')
+          break
+        case 'and':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'and'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('and')
+          break
+        case 'or':
+          cy.add({
+            group: 'nodes',
+            data: {
+              id: `n${lastNode}`,
+              label: `${component}`,
+              info: {
+                description: '',
+                concept: 'or'
+              },
+              position: {
+                x: 200,
+                y: 400
+              }
+            }
+          }).addClass('or')
+          break
+
+    //
+    // case 'thing':
+    //   cy.add({
+    //     group: 'nodes',
+    //     data: {
+    //       id: `n${lastNode}`,
+    //       label: `${component}`,
+    //       info: {
+    //         description: '',
+    //         component: '',
+    //         concept: 'thing'
+    //       },
+    //       position: {
+    //         x: 200,
+    //         y: 400
+    //       }
+    //     }
+    //   })
+    //   break
+    // case 'micronet':
+    //   cy.add({
+    //     group: 'nodes',
+    //     data: {
+    //       id: `n${lastNode}`,
+    //       label: `${component}`,
+    //       info: {
+    //         description: '',
+    //         purpose: '',
+    //         concept: 'micronet'
+    //       },
+    //       position: {
+    //         x: 200,
+    //         y: 400
+    //       }
+    //     }
+    //   })
+    //   break
+    // case 'information':
+    //   cy.add({
+    //     group: 'nodes',
+    //     data: {
+    //       id: `n${lastNode}`,
+    //       label: `${component}`,
+    //       info: {
+    //         description: '',
+    //         concept: 'information'
+    //       },
+    //       position: {
+    //         x: 200,
+    //         y: 400
+    //       }
+    //     }
+    //   })
+    //   break
+    // case 'net':
+    //   cy.add({
+    //     group: 'nodes',
+    //     data: {
+    //       id: `n${lastNode}`,
+    //       label: `${component}`,
+    //       info: {
+    //         description: '',
+    //         concept: 'net'
+    //       },
+    //       position: {
+    //         x: 200,
+    //         y: 400
+    //       }
+    //     }
+    //   })
+    //   break
+    // case 'actor':
+    //   cy.add({
+    //     group: 'nodes',
+    //     data: {
+    //       id: `n${lastNode}`,
+    //       label: `${component}`,
+    //       info: {
+    //         description: '',
+    //         intent: '',
+    //         concept: 'actor'
+    //       },
+    //       position: {
+    //         x: 200,
+    //         y: 400
+    //       }
+    //     }
+    //   }).addClass('selection')
+    //   break
+    // case 'malicious actor':
+    //   cy.add({
+    //     group: 'nodes',
+    //     data: {
+    //       id: `n${lastNode}`,
+    //       label: `${component}`,
+    //       info: {
+    //         description: '',
+    //         intent: '',
+    //         concept: 'malicious actor'
+    //       },
+    //       position: {
+    //         x: 200,
+    //         y: 400
+    //       }
+    //     }
+    //   })
+    //   break
+    // case 'asset':
+    //   cy.add({
+    //     group: 'nodes',
+    //     data: {
+    //       id: `n${lastNode}`,
+    //       label: `${component}`,
+    //       info: {
+    //         description: '',
+    //         concept: 'asset'
+    //       },
+    //       position: {
+    //         x: 200,
+    //         y: 400
+    //       }
+    //     }
+    //   })
+    //   break
+    // case 'constraint':
+    //   cy.add({
+    //     group: 'nodes',
+    //     data: {
+    //       id: `n${lastNode}`,
+    //       label: `${component}`,
+    //       info: {
+    //         description: '',
+    //         property: '',
+    //         concept: 'constraint'
+    //       },
+    //       position: {
+    //         x: 200,
+    //         y: 400
+    //       }
+    //     }
+    //   })
+    //   break
+    // case 'threat':
+    //   cy.add({
+    //     group: 'nodes',
+    //     data: {
+    //       id: `n${lastNode}`,
+    //       label: `${component}`,
+    //       info: {
+    //         description: '',
+    //         type: '',
+    //         concept: 'threat'
+    //       },
+    //       position: {
+    //         x: 200,
+    //         y: 400
+    //       }
+    //     }
+    //   })
+    //   break
+    // case 'sensor':
+    //   cy.add({
+    //     group: 'nodes',
+    //     data: {
+    //       id: `n${lastNode}`,
+    //       label: `${component}`,
+    //       info: {
+    //         description: '',
+    //         concept: 'sensor'
+    //       },
+    //       position: {
+    //         x: 200,
+    //         y: 400
+    //       }
+    //     }
+    //   })
+    //   break
     default:
-      console.error('error in addDgnComponent.js')
+      console.error('error in sectrocloudComponent.js')
   }
 }
