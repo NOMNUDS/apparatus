@@ -25,7 +25,7 @@ const impState = require('./src/implementation-state/impState.js')
 // require sectropcloud-state modules
 const sectrocloud = require('./src/sectrocloud/sectrocloud.js')
 // configuration for the graphs style
-const graphStyle = require(`./style/graphStyle.js`)
+const graphStyle = require(`./config/graphStyle.js`)
 
 // require the initial graph file
 const graphModel = require(`./graphs/implementation/smartHome.js`)
@@ -93,8 +93,6 @@ cy.on('tap', selection => {
     cy.elements().removeClass('attention')
     cy.elements().removeClass('protect')
     // clear tokens
-    // document.getElementById('module-group').selectedIndex = ''
-    // document.getElementById('selection-id').selectedIndex = ''
     selectedNode.out = {}
     selectedEdge.out = {}
     totalNodes(cy) // global module
@@ -196,19 +194,18 @@ keybindings(cy, selectedNode, selectedEdge)
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   // test code goes here
-  // toggleUI()
   printChat('test function\nused for debugging')
 })
 
 // toggles side panels
-const toggleUI = () => {
-  const sidebarStatus = document.getElementById('sidebar-id')
-  const actionBarStatus = document.getElementById('action-bar-id')
-  if (sidebarStatus.style.display === 'block') {
-    sidebarStatus.style.display = 'none'
-    actionBarStatus.style.display = 'none'
-  } else {
-    sidebarStatus.style.display = 'block'
-    actionBarStatus.style.display = 'block'
-  }
-}
+// const toggleUI = () => {
+//   const sidebarStatus = document.getElementById('sidebar-id')
+//   const actionBarStatus = document.getElementById('action-bar-id')
+//   if (sidebarStatus.style.display === 'block') {
+//     sidebarStatus.style.display = 'none'
+//     actionBarStatus.style.display = 'none'
+//   } else {
+//     sidebarStatus.style.display = 'block'
+//     actionBarStatus.style.display = 'block'
+//   }
+// }

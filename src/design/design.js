@@ -2,7 +2,7 @@
 
 // design module
 
-// require design-state modules
+// require design modules
 const dgnModelValidation = require('./dgnModelValidation.js')
 const dgnOverview = require('./dgnOverview.js')
 const addDgnComponent = require('./addDgnComponent.js')
@@ -18,10 +18,7 @@ const addNode = cy => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('click', e => {
     addDgnComponent(cy, e.target.textContent)
-    console.log(e.target.textContent)
     cy.nodes().addClass('label-nodes')
-    // reset moduleGroup selection
-    // document.getElementById('add-component-id').selectedIndex = ''
     totalNodes(cy) // global module
   })
 }
