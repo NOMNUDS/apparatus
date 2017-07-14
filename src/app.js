@@ -28,7 +28,8 @@ const sectrocloud = require('./src/sectrocloud/sectrocloud.js')
 const graphStyle = require(`./config/graphStyle.js`)
 
 // require the initial graph file
-const graphModel = require(`./graphs/implementation/smartHome.js`)
+// const graphModel = require(`./graphs/implementation/smartHome.js`)
+const graphModel = require(`./graphs/implementation/cloudScenario.js`)
 
 // setting up the graph container
 const cy = cytoscape({
