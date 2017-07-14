@@ -14,7 +14,11 @@ module.exports = function addEdge (
       id: `e${srcNode}${trgNode}`,
       source: `${srcNode}`,
       target: `${trgNode}`,
-      label: `${label}`
+      label: `${label}`,
+      info: {
+        description: 'cake',
+        property: 'something'
+      }
     }
   })
 }
