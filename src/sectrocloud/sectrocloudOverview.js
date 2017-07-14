@@ -4,86 +4,104 @@ const printChat = require('../core/printChat.js')
 const sectrocloudMetamodel = require('./sectrocloudSchema.js')
 
 module.exports = function overview (cy) {
-  const networkArray = sectrocloudMetamodel.network
-  const securityArray = sectrocloudMetamodel.security
-  const socialArray = sectrocloudMetamodel.social
-  const sensingArray = sectrocloudMetamodel.sensing
+  // const orgnanisationalArray = sectrocloudMetamodel.orgnanisational
+  // const securityArray = sectrocloudMetamodel.security
+  // const socialArray = sectrocloudMetamodel.social
+  // const sensingArray = sectrocloudMetamodel.sensing
+  const organisationalArray = sectrocloudMetamodel.organisational
+  const applicationArray = sectrocloudMetamodel.application
+  const infrastructureArray = sectrocloudMetamodel.infrastructure
+  const cloudsecurityArray = sectrocloudMetamodel.cloudsecurity
 
   let result = ''
 
   const totalNodes = cy.elements().nodes().length
   result = `total nodes: ${totalNodes}\n`
 
-  let networkNode = 0
-  let securityNode = 0
-  let socialNode = 0
-  let sensingNode = 0
+  let orgNode = 0
+  let appNode = 0
+  let infraNode = 0
+  let cloudsecurityNode = 0
 
   cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
-    if (networkArray.includes(nodeConcept) === true) {
-      networkNode += 1
-    } else if (securityArray.includes(nodeConcept) === true) {
-      securityNode += 1
-    } else if (socialArray.includes(nodeConcept) === true) {
-      socialNode += 1
-    } else if (sensingArray.includes(nodeConcept) === true) {
-      sensingNode += 1
+    if (organisationalArray.includes(nodeConcept) === true) {
+      orgNode += 1
+    } else if (applicationArray.includes(nodeConcept) === true) {
+      appNode += 1
+    } else if (infrastructureArray.includes(nodeConcept) === true) {
+      infraNode += 1
+    } else if (cloudsecurityArray.includes(nodeConcept) === true) {
+      cloudsecurityNode += 1
     }
   })
-  result = `${result}network nodes: ${networkNode}\n`
-  result = `${result}social nodes: ${socialNode}\n`
-  result = `${result}security nodes: ${securityNode}\n`
-  result = `${result}sensing nodes: ${sensingNode}\n`
+  result = `${result}orgnanisational nodes: ${orgNode}\n`
+  result = `${result}application nodes: ${appNode}\n`
+  result = `${result}infrastructure nodes: ${infraNode}\n`
+  result = `${result}cloud security nodes: ${cloudsecurityNode}\n`
 
-  let thingNode = 0
-  let micronetNode = 0
-  let netNode = 0
-  let informationNode = 0
-  let assetNode = 0
-  let threatNode = 0
-  let constraintNode = 0
-  let malActorNode = 0
   let actorNode = 0
-  let sensorNode = 0
+  let cloudactorNode = 0
+  let maliciousactorNode = 0
+  let goalNode = 0
+  let cloudserviceNode = 0
+  let resourceNode = 0
+  let virtualNode = 0
+  let infranNode = 0
+  let physicalNode = 0
+  let securityconstraintNode = 0
+  let securityobjectiveNode = 0
+  let securitymechanismNode = 0
+  let threatNode = 0
+  let vulnerabilityNode = 0
 
   cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
-    if (nodeConcept === 'thing') {
-      thingNode += 1
-    } else if (nodeConcept === 'micronet') {
-      micronetNode += 1
-    } else if (nodeConcept === 'net') {
-      netNode += 1
-    } else if (nodeConcept === 'information') {
-      informationNode += 1
-    } else if (nodeConcept === 'asset') {
-      assetNode += 1
-    } else if (nodeConcept === 'threat') {
-      threatNode += 1
-    } else if (nodeConcept === 'threat') {
-      threatNode += 1
-    } else if (nodeConcept === 'constraint') {
-      constraintNode += 1
-    } else if (nodeConcept === 'malicious actor') {
-      malActorNode += 1
-    } else if (nodeConcept === 'actor') {
+    if (nodeConcept === 'actor') {
       actorNode += 1
-    } else if (nodeConcept === 'sensor') {
-      sensorNode += 1
+    } else if (nodeConcept === 'cloud actor') {
+      cloudactorNode += 1
+    } else if (nodeConcept === 'malicious actor') {
+      maliciousactorNode += 1
+    } else if (nodeConcept === 'goal') {
+      goalNode += 1
+    } else if (nodeConcept === 'cloud service') {
+      cloudserviceNode += 1
+    } else if (nodeConcept === 'resource') {
+      resourceNode += 1
+    } else if (nodeConcept === 'virtual resource') {
+      virtualNode += 1
+    } else if (nodeConcept === 'infrastructure node') {
+      infranNode += 1
+    } else if (nodeConcept === 'physical infrastructure') {
+      physicalNode += 1
+    } else if (nodeConcept === 'security constraint') {
+      securityconstraintNode += 1
+    } else if (nodeConcept === 'security objective') {
+      securityobjectiveNode += 1
+    } else if (nodeConcept === 'security mechanism') {
+      securitymechanismNode += 1
+    } else if (nodeConcept === 'threat') {
+      threatNode += 1
+    } else if (nodeConcept === 'vulnerability') {
+      vulnerabilityNode += 1
     }
   })
 
-  result = `${result}thing nodes: ${thingNode}\n`
-  result = `${result}micronet nodes: ${micronetNode}\n`
-  result = `${result}net nodes: ${netNode}\n`
-  result = `${result}data nodes: ${informationNode}\n`
-  result = `${result}asset nodes: ${assetNode}\n`
-  result = `${result}threat nodes: ${threatNode}\n`
-  result = `${result}constraint nodes: ${constraintNode}\n`
-  result = `${result}malicious actor nodes: ${malActorNode}\n`
   result = `${result}actor nodes: ${actorNode}\n`
-  result = `${result}sensor nodes: ${sensorNode}\n`
+  result = `${result}cloud actor nodes: ${cloudactorNode}\n`
+  result = `${result}malicious actor nodes: ${maliciousactorNode}\n`
+  result = `${result}goal nodes: ${goalNode}\n`
+  result = `${result}cloud service nodes: ${cloudserviceNode}\n`
+  result = `${result}resource nodes: ${resourceNode}\n`
+  result = `${result}virtual resource nodes: ${virtualNode}\n`
+  result = `${result}infrastructure node nodes: ${infranNode}\n`
+  result = `${result}phyisical infrastructure nodes: ${physicalNode}\n`
+  result = `${result}security constraint nodes: ${securityconstraintNode}\n`
+  result = `${result}security objective nodes: ${securityobjectiveNode}\n`
+  result = `${result}security mechanism nodes: ${securitymechanismNode}\n`
+  result = `${result}threat nodes: ${threatNode}\n`
+  result = `${result}vulnerability nodes: ${vulnerabilityNode}\n`
 
   printChat(result)
 }

@@ -6,16 +6,18 @@ const printChat = require('../core/printChat.js')
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
-  const thingArray = sectrocloudMetamodel.thingArray
-  const micronetArray = sectrocloudMetamodel.micronetArray
-  const netArray = sectrocloudMetamodel.netArray
-  const informationArray = sectrocloudMetamodel.informationArray
+  // const thingArray = sectrocloudMetamodel.thingArray
+  // const micronetArray = sectrocloudMetamodel.micronetArray
+  // const netArray = sectrocloudMetamodel.netArray
+  // const informationArray = sectrocloudMetamodel.informationArray
+  // const actorArray = sectrocloudMetamodel.actorArray
+  // const maliciousActorArray = sectrocloudMetamodel.maliciousActorArray
+  // const assetArray = sectrocloudMetamodel.assetArray
+  // const constraintArray = sectrocloudMetamodel.constraintArray
+  // const threatArray = sectrocloudMetamodel.threatArray
+  // const sensorArray = sectrocloudMetamodel.sensorArray
+  const goalArray = sectrocloudMetamodel.goalArray
   const actorArray = sectrocloudMetamodel.actorArray
-  const maliciousActorArray = sectrocloudMetamodel.maliciousActorArray
-  const assetArray = sectrocloudMetamodel.assetArray
-  const constraintArray = sectrocloudMetamodel.constraintArray
-  const threatArray = sectrocloudMetamodel.threatArray
-  const sensorArray = sectrocloudMetamodel.sensorArray
 
   // decleration of arrays
   let result = '' // posted on the nodeInfo div
@@ -48,16 +50,17 @@ module.exports = function moduleValidation (cy) {
     }
   }
 
-  componentValidation(cy, 'thing', thingArray)
-  componentValidation(cy, 'micronet', micronetArray)
-  componentValidation(cy, 'net', netArray)
-  componentValidation(cy, 'information', informationArray)
+  // componentValidation(cy, 'thing', thingArray)
+  // componentValidation(cy, 'micronet', micronetArray)
+  // componentValidation(cy, 'net', netArray)
+  // componentValidation(cy, 'information', informationArray)
+  // componentValidation(cy, 'malicious actor', maliciousActorArray)
+  // componentValidation(cy, 'asset', assetArray)
+  // componentValidation(cy, 'constraint', constraintArray)
+  // componentValidation(cy, 'threat', threatArray)
+  // componentValidation(cy, 'sensor', sensorArray)
+  componentValidation(cy, 'goal', goalArray)
   componentValidation(cy, 'actor', actorArray)
-  componentValidation(cy, 'malicious actor', maliciousActorArray)
-  componentValidation(cy, 'asset', assetArray)
-  componentValidation(cy, 'constraint', constraintArray)
-  componentValidation(cy, 'threat', threatArray)
-  componentValidation(cy, 'sensor', sensorArray)
 
   printChat(result)
 }
