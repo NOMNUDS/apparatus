@@ -13,7 +13,7 @@ module.exports = function load (graphStyle) {
   let cy = {}
   dialog.showOpenDialog(
     {
-      properties: ['openFile', 'openDirectory'],
+      properties: ['openFile'],
       filters: [{ name: 'javascript', extensions: ['json', 'js'] }]
     },
     fileName => {

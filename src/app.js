@@ -28,7 +28,7 @@ const start = () => {
   // loads a file on start
   dialog.showOpenDialog(
     {
-      properties: ['openFile', 'openDirectory'],
+      properties: ['openFile'],
       filters: [{ name: 'javascript', extensions: ['json', 'js'] }]
     },
     fileNames => {
