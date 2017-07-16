@@ -39,7 +39,7 @@ npm install
 npm start
 ```
 
-Because the app is still in prototyping stage, it is best to keep up to date with the most recent changes. To do so, type:
+Because the app is still in prototype stage, it is best to keep up to date with the most recent commits. To do so, before starting the app, type:
 
 ```bash
 # inside the apparatus directory
@@ -53,6 +53,8 @@ git pull
 If you want to contribute that's great news 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide.
 
 If you want to find out how the app works check the [wiki](https://github.com/Or3stis/apparatus/wiki).
+
+You can check the project's planned features in the [roadmap](https://github.com/Or3stis/apparatus/wiki/Roadmap).
 
 
 #### License [MIT](LICENSE.md)
