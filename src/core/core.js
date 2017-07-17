@@ -82,18 +82,18 @@ const labels = cy => {
   })
 }
 // save graph
-const saveGraph = (cy, path) => {
+const saveGraph = (cy) => {
   // save graph
   const buttonSave = document.getElementById('save-button')
   buttonSave.addEventListener('click', () => {
-    save(cy, path)
+    save(cy)
   })
 }
 // loads a graph
-// const loadGraph = (cy, graphModel, cytoscape, graphStyle) => {
+// const loadGraph = (cy) => {
 //   const buttonLoad = document.getElementById('load-button')
 //   buttonLoad.addEventListener('click', () => {
-//     load(cy, graphModel, cytoscape, graphStyle)
+//     load(cy)
 //   })
 // }
 const restoreNode = () => {

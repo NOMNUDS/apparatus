@@ -16,7 +16,7 @@ module.exports = function overview (cy) {
   let result = ''
 
   const totalNodes = cy.elements().nodes().length
-  result = `total nodes: ${totalNodes}\n`
+  result = `• total nodes: ${totalNodes}\n`
 
   let orgNode = 0
   let appNode = 0
@@ -35,10 +35,10 @@ module.exports = function overview (cy) {
       cloudsecurityNode += 1
     }
   })
-  result = `${result}orgnanisational nodes: ${orgNode}\n`
-  result = `${result}application nodes: ${appNode}\n`
-  result = `${result}infrastructure nodes: ${infraNode}\n`
-  result = `${result}cloud security nodes: ${cloudsecurityNode}\n`
+  result = `${result}• orgnanisational nodes: ${orgNode}\n`
+  result = `${result}• application nodes: ${appNode}\n`
+  result = `${result}• infrastructure nodes: ${infraNode}\n`
+  result = `${result}• cloud security nodes: ${cloudsecurityNode}\n`
 
   let actorNode = 0
   let cloudactorNode = 0
