@@ -9,6 +9,9 @@ sectrocloudMetamodel.infrastructure = ['infrastructure node', 'physical infrastr
 'threat']
 sectrocloudMetamodel.cloudsecurity = ['cloud service', 'cloud actor', 'malicious actor', 'vulnerability',
 'threat', 'security constraint', 'security objective', 'security mechanism', 'infrastructure node', 'virtual resource']
+sectrocloudMetamodel.management = ['cloud service', 'cloud actor', 'malicious actor', 'security constraint',
+ 'security objective', 'security mechanism']
+
 
 // allowed concepts connections
 sectrocloudMetamodel.goalArray = ['goal', 'actor', 'cloud actor', 'malicious actor',

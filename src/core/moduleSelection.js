@@ -29,6 +29,21 @@ module.exports = function moduleSelection (cy, input) {
     'control sensor'
   ]
 
+  const goalArray = ['goal', 'actor', 'cloud actor', 'malicious actor',
+    'plan', 'resource', 'threat', 'security constraint', 'and', 'or', 'cloud service']
+  const actorArray = ['goal', 'cloud service', 'cloud actor', 'malicious actor']
+  const organisational = ['actor', 'cloud actor', 'malicious actor', 'goal',
+  'cloud service', 'security constraint' , 'resource', 'security objective']
+  const application = ['cloud service', 'virtual resource', 'infrastructure node',
+   'threat', 'vulnerability', 'security objective']
+  const infrastructure = ['infrastructure node', 'physical infrastructure', 'security mechanism', 'vulnerability',
+  'threat']
+  const cloudsecurity = ['cloud service', 'cloud actor', 'malicious actor', 'vulnerability',
+  'threat', 'security constraint', 'security objective', 'security mechanism', 'infrastructure node', 'virtual resource']
+  const management = ['cloud service', 'cloud actor', 'malicious actor', 'security constraint',
+   'security objective', 'security mechanism']
+
+
   const condition = input
   switch (condition) {
     case 'network':
@@ -55,6 +70,30 @@ module.exports = function moduleSelection (cy, input) {
     case 'network-social':
       groupArray = networkArray.concat(socialArray)
       break
+
+    // sectrocloud shit
+    case 'goal':
+      groupArray = goalArray
+      break
+    case 'actor':
+      groupArray = actorArray
+      break
+    case 'organisational':
+      groupArray = organisational
+      break
+    case 'application':
+      groupArray = application
+      break
+    case 'infrastructure':
+      groupArray = infrastructure
+      break
+    case 'cloudsecurity':
+      groupArray = cloudsecurity
+      break
+    case 'management':
+      groupArray = management
+      break
+
     default:
       groupArray = []
       console.error('error in moduleSelection.js')

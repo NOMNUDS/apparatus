@@ -88,20 +88,20 @@ module.exports = function overview (cy) {
     }
   })
 
-  result = `${result}actor nodes: ${actorNode}\n`
-  result = `${result}cloud actor nodes: ${cloudactorNode}\n`
-  result = `${result}malicious actor nodes: ${maliciousactorNode}\n`
-  result = `${result}goal nodes: ${goalNode}\n`
-  result = `${result}cloud service nodes: ${cloudserviceNode}\n`
-  result = `${result}resource nodes: ${resourceNode}\n`
-  result = `${result}virtual resource nodes: ${virtualNode}\n`
-  result = `${result}infrastructure node nodes: ${infranNode}\n`
-  result = `${result}phyisical infrastructure nodes: ${physicalNode}\n`
-  result = `${result}security constraint nodes: ${securityconstraintNode}\n`
-  result = `${result}security objective nodes: ${securityobjectiveNode}\n`
-  result = `${result}security mechanism nodes: ${securitymechanismNode}\n`
-  result = `${result}threat nodes: ${threatNode}\n`
-  result = `${result}vulnerability nodes: ${vulnerabilityNode}\n`
+  result = `${result}• actor nodes: ${actorNode}\n`
+  result = `${result}• cloud actor nodes: ${cloudactorNode}\n`
+  result = `${result}• malicious actor nodes: ${maliciousactorNode}\n`
+  result = `${result}• goal nodes: ${goalNode}\n`
+  result = `${result}• cloud service nodes: ${cloudserviceNode}\n`
+  result = `${result}• resource nodes: ${resourceNode}\n`
+  result = `${result}• virtual resource nodes: ${virtualNode}\n`
+  result = `${result}• infrastructure node nodes: ${infranNode}\n`
+  result = `${result}• phyisical infrastructure nodes: ${physicalNode}\n`
+  result = `${result}• security constraint nodes: ${securityconstraintNode}\n`
+  result = `${result}• security objective nodes: ${securityobjectiveNode}\n`
+  result = `${result}• security mechanism nodes: ${securitymechanismNode}\n`
+  result = `${result}• threat nodes: ${threatNode}\n`
+  result = `${result}• vulnerability nodes: ${vulnerabilityNode}\n`
 
   printChat(result)
 }
