@@ -1,4 +1,4 @@
-'use scrict'
+'use strict'
 
 const sectrocloudMetamodel = require('./sectrocloudSchema.js')
 const printChat = require('../core/printChat.js')

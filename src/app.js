@@ -46,7 +46,7 @@ const start = () => {
   buttonDebug.className = 'startButtons'
   buttonDebug.type = 'button'
   buttonDebug.value = 'debug'
-  buttonDebug.textContent = 'bebug app'
+  buttonDebug.textContent = 'debug app'
 
   wrapper.appendChild(buttonNew)
   wrapper.appendChild(buttonLoad)
