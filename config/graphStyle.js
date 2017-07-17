@@ -42,6 +42,7 @@ graphStyle.style = [{
 }, {
   selector: '.label-nodes',
   style: {
+    //label: 'data(info.description)',
     label: 'data(label)',
     'text-valign': 'center',
     'color': config.white,
@@ -67,6 +68,18 @@ graphStyle.style = [{
     'text-outline-width': 2,
     'text-outline-color': config.background
   }
+}, {
+    // Selector to display the description on labels
+    selector: '.show-node-description',
+    style: {
+      label: 'data(info.description)',
+      'text-valign': 'center',
+      'color': config.white,
+      'text-outline-width': 2,
+      'text-outline-color': config.background
+    }
+
+
 
   // Old cloud shit
 }, {
@@ -152,6 +165,12 @@ graphStyle.style = [{
     style: {
       shape: 'triangle',
       'background-color': config.orange
+    }
+  }, {
+    selector: '.vulnerability',
+    style: {
+      shape: 'roundrectangle',
+      'background-color': config.darkred
     }
   }, {
     selector: '.and',
