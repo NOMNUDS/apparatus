@@ -1,14 +1,13 @@
 'use strict'
 
 const load = require('./src/core/load.js')
-
-let cy = {}
-
-const template = '../../graphs/modelTemplate.js'
-
-const testGraph = '../../graphs/implementation/smartHome.js'
 const initialize = require('./src/initialize.js')
 const cyOptions = require('./src/core/cyOptions.js')
+
+const template = '../../graphs/modelTemplate.js'
+const testGraph = '../../graphs/implementation/smartHome.js'
+
+let cy = {}
 
 const newGraph = () => {
   cyOptions(cy, template)
@@ -19,7 +18,7 @@ const debugGraph = () => {
   initialize(cy.out)
 }
 
-// new stuff
+// TODO move it to different modules
 const start = () => {
   const graph = document.getElementById('graph-container')
   const wrapper = document.createElement('wrapper')
