@@ -98,6 +98,7 @@ module.exports = function addComponent (
         printChat(`${srcNodeCpt} -> ${trgNodeCpt}\nnot allowed 😔`)
     }
   }
+  // Special case for owns relationship (Clashes with manages)
   else if (e === 'owns') {
     switch (true) {
       //  owns(CA,CS|R)
@@ -113,11 +114,25 @@ module.exports = function addComponent (
         printChat(`${srcNodeCpt} -> ${trgNodeCpt}\nnot allowed 😔`)
     }
   }
+  // Special case for manages relationship (Clashes with owns)
   else if (e === 'manages') {
     switch (true) {
       //  manages(CA,CS)
       case (srcNodeCpt === 'cloud actor' && trgNodeCpt === 'cloud service'):
         addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'manages')
+        break
+      default:
+        printChat(`${srcNodeCpt} -> ${trgNodeCpt}\nnot allowed 😔`)
+    }
+  }
+  // Special case for permeates relationship (clashes with requires)
+  else if (e === 'permeates') {
+    switch (true) {
+      //  manages(CA,CS)
+      case ((srcNodeCpt === 'virtual resource' || srcNodeCpt === 'infrastructure node') &&
+      (trgNodeCpt === 'virtual resource' || trgNodeCpt === 'physical infrastructure' ||
+      trgNodeCpt === 'infrastructure node')):
+        addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'permeates')
         break
       default:
         printChat(`${srcNodeCpt} -> ${trgNodeCpt}\nnot allowed 😔`)
