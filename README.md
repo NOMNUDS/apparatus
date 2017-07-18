@@ -1,5 +1,8 @@
 # ASTo - Apparatus Software Tool
 
+## SectroCloud - Cloud Security Analysis Module
+SectroCloud is a module extending ASTo with cloud computing and security requirements engineering concepts, in order to provide decision support for cloud developers applying the Secure Cloud Environment Framework.
+
 ## An IoT network security analysis tool and visualizer
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
