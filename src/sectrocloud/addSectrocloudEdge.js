@@ -75,8 +75,8 @@ module.exports = function addComponent (
       trgNodeCpt === 'virtural resource' || trgNodeCpt === 'physical infrastructure')):
         addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'permeates')
         break
-      case (srcNodeCpt === 'infrastructure node' && (trgNodeCpt === 'infrastructure node' ||
-      trgNodeCpt === 'virtural resource' || trgNodeCpt === 'physical infrastructure')):
+      case (srcNodeCpt === 'infrastructure node' && (trgNodeCpt === 'virtural resource' ||
+      trgNodeCpt === 'physical infrastructure')):
         addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'permeates')
         break
       //  requires(CS,CS|R|VR|IN|PI)
@@ -93,7 +93,6 @@ module.exports = function addComponent (
       trgNodeCpt === 'infrastructure node')):
         addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'requires')
         break
-
       default:
         printChat(`${srcNodeCpt} -> ${trgNodeCpt}\nnot allowed 😔`)
     }
@@ -138,4 +137,28 @@ module.exports = function addComponent (
         printChat(`${srcNodeCpt} -> ${trgNodeCpt}\nnot allowed 😔`)
     }
   }
+  // Special case for permeates relationship (clashes with requires)
+  else if (e === 'composition') {
+    switch (true) {
+      //  composition(IN,PI)
+      case (srcNodeCpt === 'infrastructure node' && trgNodeCpt === 'physical infrastructure'):
+        addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'composition')
+        break
+      //  composition(CS,CS)
+      case (srcNodeCpt === 'cloud service' && trgNodeCpt === 'cloud service'):
+        addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'composition')
+        break
+      //  composition(G,G)
+      case (srcNodeCpt === 'goal' && trgNodeCpt === 'goal'):
+        addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'composition')
+        break
+      //  composition(V,V)
+      case (srcNodeCpt === 'vulnerability' && trgNodeCpt === 'vulnerability'):
+        addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'composition')
+        break
+      default:
+        printChat(`${srcNodeCpt} -> ${trgNodeCpt}\nnot allowed 😔`)
+    }
+  }
+
 }

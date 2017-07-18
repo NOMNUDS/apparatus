@@ -268,8 +268,13 @@ graphStyle.style = [{
       //'line-style': 'dashed'
       label: 'depends'
     }
+  }, {
+    selector: '.composition',
+    style: {
+      //'line-style': 'dashed'
+      label: 'composition'
+    }
   }
-
 
 
 
