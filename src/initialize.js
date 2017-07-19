@@ -177,7 +177,7 @@ module.exports = function setup (cy) {
   }
     // Sectro stuff TO CJHANGE
     else if (pathLocation === sectrocloudPath) {
-    sectrocloud.addNode(cy)
+    sectrocloud.addNode(cy, initialCount)
     sectrocloud.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
     sectrocloud.threatVerify(cy)
     sectrocloud.overview(cy)
