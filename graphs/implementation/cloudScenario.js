@@ -48,7 +48,18 @@ graphModel.elements = [
       id: 'e1',
       source: '1',
       target: '2',
-      label: 'owns'
+      label: 'owns',
+      info: {
+        description: 'User data',
+        Value: '9.5',
+        SecurityProperty: 'CI',
+        Type: '',
+        Vendor: '',
+        Version: '',
+        ResourceType: 'Data',
+        visibility: 'Private',
+        concept: 'virtual resource'
+      }
     }
   }, {
     data: {

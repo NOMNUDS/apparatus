@@ -19,8 +19,8 @@ module.exports = function addsectrocloudComponent (cy, component) {
                 concept: 'goal'
               },
               position: {
-                x: 200,
-                y: 400
+                x: 20000,
+                y: 400000
               }
             }
           }).addClass('goal')

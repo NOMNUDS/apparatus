@@ -11,6 +11,7 @@ const printChat = require('../src/core/printChat.js')
 // const nodeInfo = require('./src/core/nodeInfo.js')
 const core = require('../src/core/core.js')
 const hoverNodeInfo = require('../src/core/hoverNodeInfo.js')
+const hoverEdgeInfo = require('../src/core/hoverEdgeInfo.js')
 const editNode = require('../src/core/editNode.js')
 const totalNodes = require('../src/core/totalNodes.js')
 // require design modules
@@ -91,8 +92,17 @@ module.exports = function setup (cy) {
   cy.on('mouseover', 'node', event => {
     hoverNodeInfo(event.target[0]) // global module
   })
+  // do stuff when hovering over a edge
+  cy.on('mouseover', 'edge', event => {
+    hoverEdgeInfo(event.target[0]) // global module
+  })
   // do stuff when hovering out of a node
   cy.on('mouseout', 'node', event => {
+    // hides the hover container
+    document.getElementById('container-node-id').style.display = 'none'
+  })
+  // do stuff when hovering out of a node
+  cy.on('mouseout', 'edge', event => {
     // hides the hover container
     document.getElementById('container-node-id').style.display = 'none'
   })
