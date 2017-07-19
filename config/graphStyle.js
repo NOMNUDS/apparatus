@@ -86,7 +86,7 @@ graphStyle.style = [{
     selector: '.actor',
     style: {
       shape: 'ellipse',
-      'background-color': config.magenta
+      'background-color': config.pink
     }
   }, {
     selector: '.goal',
@@ -110,7 +110,7 @@ graphStyle.style = [{
     selector: '.cloud-actor',
     style: {
       shape: 'ellipse',
-      'background-color': config.green
+      'background-color': config.pink
     }
   }, {
     selector: '.cloud-service',
@@ -122,25 +122,31 @@ graphStyle.style = [{
     selector: '.virtual-resource',
     style: {
       shape: 'rectangle',
-      'background-color': config.darkgreen
+      'background-color': config.yellow,
+      'border-width': '3',
+      'border-style': 'dotted'
     }
   }, {
     selector: '.physical-infrastructure',
     style: {
       shape: 'rectangle',
-      'background-color': config.darkgreen
+      'background-color': config.yellow,
+      'border-width': '3',
+      'border-style': 'solid'
     }
   }, {
     selector: '.infrastructure-node',
     style: {
       shape: 'rectangle',
-      'background-color': config.darkgreen
+      'background-color': config.yellow,
+      'border-width': '3',
+      'border-style': 'dashed'
     }
   }, {
     selector: '.malicious-actor',
     style: {
       shape: 'ellipse',
-      'background-color': config.red
+      'background-color': config.pink
     }
   }, {
     selector: '.security-mechanism',

@@ -5,7 +5,7 @@ const initialize = require('./src/initialize.js')
 const cyOptions = require('./src/core/cyOptions.js')
 
 const template = '../../graphs/modelTemplate.js'
-const testGraph = '../../graphs/implementation/smartHome.js'
+const testGraph = '../../graphs/implementation/tEst.json'
 
 let cy = {}
 
