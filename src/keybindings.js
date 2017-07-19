@@ -7,11 +7,11 @@ const save = require('./core/save.js')
 
 module.exports = function console (cy, selectedNode, selectedEdge) {
   // help menu
-  const helpMenu = `• focus on console:  ⌘L
+  const helpMenu = `• focus on console: ⌘L
 • delete element: ⌘⌫
 • restore node: ⌘Z
 • save as: ⇧⌘S
-
+• clear sidebar: clear
 • keyword search for attributes`
 
   // loses the focus from the console when tapping

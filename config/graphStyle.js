@@ -26,13 +26,23 @@ graphStyle.style = [{
 }, {
   selector: '.selection',
   style: {
-    'background-color': config.blue,
-    'line-color': config.blue
+    // // 'border-color': config.blue,
+    // label: 'data(label)',
+    // 'text-valign': 'center',
+    // 'color': config.blue,
+    // 'text-outline-width': 2,
+    // 'text-outline-color': config.background
+    // // 'line-color': config.blue
   }
 }, {
   selector: '.old-selection',
   style: {
-    'background-color': config.orange
+    // label: 'data(label)',
+    // 'text-valign': 'center',
+    // 'color': config.orange,
+    // 'text-outline-width': 2,
+    // 'text-outline-color': config.background
+    // //'border-color': config.orange
   }
 }, {
   selector: '.attention',
