@@ -33,21 +33,31 @@ module.exports = function setup (cy) {
 
   // global variables, used in cy.on
   let selectedNode = {}
+  // initialize value to prevent undefined errors
+  selectedNode.out = {}
+  let oldSelectedNode = {}
   let selectedEdge = {}
   let srcNode = {}
   let trgNode = {}
   let srcNodeCpt = {}
   let trgNodeCpt = {}
+  // counter variable to create unique sequential node ids in addComponents.js
+  const initialCount = cy.nodes().length
 
   // cy.on does stuff when intrecting with the graph
-  // do stuff when tapping on node
+  // actions when tapping on node
   cy.on('tap', 'node', selection => {
     // removes previous selections
     cy.elements().removeClass('selection')
     cy.elements().removeClass('attention')
     cy.elements().removeClass('protect')
+    cy.nodes().removeClass('old-selection')
+    oldSelectedNode = selectedNode.out
     selectedNode.out = selection.target[0]
     selectedNode.out.addClass('selection')
+    if (Object.keys(oldSelectedNode).length !== 0) {
+      oldSelectedNode.addClass('old-selection')
+    }
     srcNode.out = trgNode.out // second selection
     trgNode.out = selectedNode.out.data().id
     srcNodeCpt.out = trgNodeCpt.out // second selection
@@ -57,20 +67,22 @@ module.exports = function setup (cy) {
     editNode.removeElement() // remove the edit node element
     editEdge.removeElement() // remove the edit edge element
   })
-  // do stuff when tapping on an edge
+  // actions when tapping on an edge
   cy.on('tap', 'edge', selection => {
     // removes previous selections
     cy.elements().removeClass('selection')
     cy.elements().removeClass('attention')
     cy.elements().removeClass('protect')
+    cy.nodes().removeClass('old-selection')
     selection.target.addClass('selection')
     selectedNode.out = {} // clear token
+    oldSelectedNode = {} // clear token
     selectedEdge.out = selection.target[0]
     totalNodes(cy) // global module
     editNode.removeElement() // remove the edit node element
     editEdge.removeElement() // remove the edit edge element
   })
-  // do stuff when tapping the stage
+  // actions when tapping the stage
   cy.on('tap', selection => {
     // checks if only the stage was clicked
     if (selection.target === cy) {
@@ -79,8 +91,10 @@ module.exports = function setup (cy) {
       cy.elements().removeClass('selection')
       cy.elements().removeClass('attention')
       cy.elements().removeClass('protect')
+      cy.nodes().removeClass('old-selection')
       // clear tokens
       selectedNode.out = {}
+      oldSelectedNode = {}
       selectedEdge.out = {}
       totalNodes(cy) // global module
       editNode.removeElement() // remove the edit node element
@@ -131,7 +145,7 @@ module.exports = function setup (cy) {
 
   // load design phase buttons
   if (pathLocation === dgnPath) {
-    dgn.addNode(cy)
+    dgn.addNode(cy, initialCount)
     dgn.threatVerify(cy)
     dgn.overview(cy)
     dgn.validate(cy)
@@ -139,13 +153,13 @@ module.exports = function setup (cy) {
     dgn.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
     // load design-state buttons
   } else if (pathLocation === dgnStatePath) {
-    dgnState.addNode(cy)
+    dgnState.addNode(cy, initialCount)
     dgnState.overview(cy)
     dgnState.validate(cy)
     dgnState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
     // loads implementation phase buttons
   } else if (pathLocation === impPath) {
-    imp.addNode(cy)
+    imp.addNode(cy, initialCount)
     imp.overview(cy)
     imp.validate(cy)
     imp.threatVerify(cy)
@@ -156,7 +170,7 @@ module.exports = function setup (cy) {
     imp.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
     // loads implementation-state buttons
   } else if (pathLocation === impStatePath) {
-    impState.addNode(cy)
+    impState.addNode(cy, initialCount)
     impState.overview(cy)
     impState.validate(cy)
     impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)

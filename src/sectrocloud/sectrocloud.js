@@ -15,11 +15,12 @@ const moduleSelection = require('../core/moduleSelection.js')
 const vulnVerification = require('./vulnVerification.js')
 const findVulns = require('./findVulns.js')
 
-// design nodes
-const addNode = cy => {
+// ADD SECTROCLOUD nodes
+const addNode = (cy, nodeCounter) => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('click', e => {
-    addsectrocloudComponent(cy, e.target.textContent)
+    nodeCounter += 1
+    addsectrocloudComponent(cy, e.target.textContent, nodeCounter)
     console.log(e.target.textContent)
     cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
