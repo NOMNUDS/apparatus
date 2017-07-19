@@ -13,6 +13,7 @@ const core = require('../src/core/core.js')
 const hoverNodeInfo = require('../src/core/hoverNodeInfo.js')
 const hoverEdgeInfo = require('../src/core/hoverEdgeInfo.js')
 const editNode = require('../src/core/editNode.js')
+const editEdge = require('../src/core/editEdge.js')
 const totalNodes = require('../src/core/totalNodes.js')
 // require design modules
 const dgn = require('../src/design/design.js')
@@ -54,6 +55,7 @@ module.exports = function setup (cy) {
     selectedEdge.out = {} // clear token
     totalNodes(cy) // global module
     editNode.removeElement() // remove the edit node element
+    editEdge.removeElement() // remove the edit edge element
   })
   // do stuff when tapping on an edge
   cy.on('tap', 'edge', selection => {
@@ -66,6 +68,7 @@ module.exports = function setup (cy) {
     selectedEdge.out = selection.target[0]
     totalNodes(cy) // global module
     editNode.removeElement() // remove the edit node element
+    editEdge.removeElement() // remove the edit edge element
   })
   // do stuff when tapping the stage
   cy.on('tap', selection => {
@@ -81,12 +84,18 @@ module.exports = function setup (cy) {
       selectedEdge.out = {}
       totalNodes(cy) // global module
       editNode.removeElement() // remove the edit node element
+      editEdge.removeElement() // remove the edit edge element
     }
   })
-  // right clicking
+  // right clicking NODE
   cy.on('cxttapend', 'node', selection => {
     selectedNode = selection.target[0]
     editNode.formNode(selectedNode) // global module
+  })
+  // right clicking on edge
+  cy.on('cxttapend', 'edge', selection => {
+    selectedEdge = selection.target[0]
+    editEdge.formEdge(selectedEdge) // global module
   })
   // do stuff when hovering over a node
   cy.on('mouseover', 'node', event => {

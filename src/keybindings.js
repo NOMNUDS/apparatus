@@ -47,19 +47,19 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
   // keydown listeners
   document.addEventListener('keydown', event => {
     // focus on the consoleId
-    if (event.metaKey === true && event.code === 'KeyL') {
+    if (event.ctrlKey === true && event.code === 'KeyL') {
       consoleId.focus()
     }
-    if (event.metaKey === true && event.code === 'Backspace') {
+    if (event.ctrlKey === true && event.code === 'Backspace') {
       core.deleteEl(cy, selectedNode, selectedEdge)
     }
-    if (event.metaKey === true && event.code === 'KeyZ') {
+    if (event.ctrlKey === true && event.code === 'KeyZ') {
       // restore elements with meta + z
       core.restoreNode()
     }
     if (
       event.shiftKey === true &&
-      event.metaKey === true &&
+      event.ctrlKey === true &&
       event.code === 'KeyS'
     ) {
       save(cy)

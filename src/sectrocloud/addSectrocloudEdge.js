@@ -21,7 +21,7 @@ module.exports = function addComponent (
       case ((srcNodeCpt === 'actor' || srcNodeCpt === 'cloud actor' ||
        srcNodeCpt === 'malicious actor') &&
       (trgNodeCpt === 'goal' || trgNodeCpt === 'cloud service')):
-        addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'dependency', 'adw')
+        addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'dependency')
         break
       //  dependency(G|R,R|CS)
       case ((srcNodeCpt === 'goal' || srcNodeCpt === 'cloud service') &&
