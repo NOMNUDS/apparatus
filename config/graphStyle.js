@@ -26,6 +26,13 @@ graphStyle.style = [{
 }, {
   selector: '.selection',
   style: {
+    'font-weight': 'bold',
+    'text-transform': 'uppercase',
+    'color': config.blue,
+    'overlay-color': config.blue,
+    'text-outline-width': 5,
+    'text-outline-color': config.blue,
+    'text-background-color': config.blue
     // // 'border-color': config.blue,
     // label: 'data(label)',
     // 'text-valign': 'center',
@@ -37,6 +44,15 @@ graphStyle.style = [{
 }, {
   selector: '.old-selection',
   style: {
+    //'font-weight': 'bold',
+    'font-style': 'oblique',
+    'text-transform': 'uppercase',
+    'color': config.orange,
+    'overlay-color': config.orange,
+    'text-outline-width': 5,
+    'text-outline-color': config.orange,
+    'text-background-color': config.orange
+
     // label: 'data(label)',
     // 'text-valign': 'center',
     // 'color': config.orange,
