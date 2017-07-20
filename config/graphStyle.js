@@ -195,7 +195,7 @@ graphStyle.style = [{
     selector: '.security-objective',
     style: {
       shape: 'rectangle',
-      'background-color': config.lightblue
+      'background-color': config.lightBlue
     }
   }, {
     selector: '.threat',
