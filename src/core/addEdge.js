@@ -96,6 +96,21 @@ module.exports = function addEdge (
             }
           }).addClass('manages')
           break
+    // case ('dependency'):
+    //       cy.add({
+    //         group: 'edges',
+    //         data: {
+    //           id: `e${srcNode}${trgNode}`,
+    //           source: `${srcNode}`,
+    //           target: `${trgNode}`,
+    //           label: `${label}`,
+    //           info: {
+    //             dependee: 'CS',
+    //             dependum: 'public',
+    //           }
+    //         }
+    //       }).addClass('dependency')
+    //       break
     default:
     cy.add({
       group: 'edges',

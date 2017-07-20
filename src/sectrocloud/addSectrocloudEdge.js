@@ -67,6 +67,11 @@ module.exports = function addComponent (
       case (srcNodeCpt === 'malicious actor' && trgNodeCpt === 'threat'):
         addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'poses')
         break
+      //  imposed_to(MA,T)
+      case (srcNodeCpt === 'security constraint' && (trgNodeCpt === 'actor' ||
+      trgNodeCpt === 'cloud actor' )):
+        addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'imposed_to')
+        break
       /*
       * Cloud shit
       */
