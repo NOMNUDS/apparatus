@@ -117,96 +117,154 @@ graphStyle.style = [{
     selector: '.actor',
     style: {
       shape: 'ellipse',
+      width: '60',
+      height: '60',
+      padding: '10px',
+      'border-width': '3',
       'background-color': config.pink
     }
   }, {
     selector: '.goal',
     style: {
       shape: 'roundrectangle',
+      width: 'label',
+      height: 'label',
+      padding: '10px',
+      'border-width': '3',
       'background-color': config.green
     }
   }, {
     selector: '.plan',
     style: {
       shape: 'vee',
+      width: 'label',
+      height: 'label',
+      padding: '10px',
+      'border-width': '3',
       'background-color': config.blue
     }
   }, {
     selector: '.resource',
     style: {
       shape: 'rectangle',
+      width: 'label',
+      height: 'label',
+      padding: '10px',
+      'border-width': '3',
       'background-color': config.yellow
     }
   }, {
     selector: '.cloud-actor',
     style: {
       shape: 'ellipse',
+      width: '60',
+      height: '60',
+      padding: '10px',
+      'border-width': '3',
       'background-color': config.pink
     }
   }, {
     selector: '.cloud-service',
     style: {
       shape: 'roundrectangle',
+      width: 'label',
+      height: 'label',
+      padding: '10px',
+      'border-width': '3',
       'background-color': config.darkgreen
     }
   }, {
     selector: '.virtual-resource',
     style: {
       shape: 'rectangle',
+      width: 'label',
+      height: 'label',
+      padding: '10px',
       'background-color': config.yellow,
-      'border-width': '3',
+      'border-width': '6',
       'border-style': 'dotted'
     }
   }, {
     selector: '.physical-infrastructure',
     style: {
       shape: 'rectangle',
+      width: 'label',
+      height: 'label',
+      padding: '10px',
       'background-color': config.yellow,
-      'border-width': '3',
+      'border-width': '6',
       'border-style': 'solid'
     }
   }, {
     selector: '.infrastructure-node',
     style: {
+      width: 'label',
+      height: 'label',
+      padding: '10px',
       shape: 'rectangle',
       'background-color': config.yellow,
-      'border-width': '3',
+      'border-width': '6',
       'border-style': 'dashed'
     }
   }, {
     selector: '.malicious-actor',
     style: {
+      width: '60',
+      height: '60',
+      padding: '10px',
+      'border-width': '3',
       shape: 'ellipse',
       'background-color': config.pink
     }
   }, {
     selector: '.security-mechanism',
     style: {
+      width: 'label',
+      height: 'label',
+      padding: '10px',
+      'border-width': '3',
       shape: 'rectangle',
       'background-color': config.green
     }
   }, {
     selector: '.security-constraint',
     style: {
+      width: '70',
+      height: '70',
+      padding: '10px',
       shape: 'octagon',
+      'border-width': '3',
       'background-color': config.red
     }
   }, {
     selector: '.security-objective',
     style: {
+      width: 'label',
+      height: 'label',
+      padding: '10px',
+      'border-width': '3',
       shape: 'rectangle',
       'background-color': config.lightBlue
+
     }
   }, {
     selector: '.threat',
     style: {
       shape: 'triangle',
+      width: 'label',
+      height: 'label',
+      padding: '30px',
+      'border-width': '3',
       'background-color': config.orange
     }
   }, {
     selector: '.vulnerability',
     style: {
       shape: 'roundrectangle',
+      width: 'label',
+      height: 'label',
+      padding: '10px',
+      'border-width': '3',
       'background-color': config.darkred
     }
   }, {
@@ -304,6 +362,12 @@ graphStyle.style = [{
     style: {
       //'line-style': 'dashed'
       label: 'depends'
+    }
+  }, {
+    selector: '.affects',
+    style: {
+      //'line-style': 'dashed'
+      label: 'affects'
     }
   }, {
     selector: '.composition',

@@ -72,6 +72,13 @@ module.exports = function addComponent (
       trgNodeCpt === 'cloud actor' )):
         addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'imposed_to')
         break
+      //  affects(V,G/R)
+      case (srcNodeCpt === 'vulnerability' && (trgNodeCpt === 'resource' ||
+      trgNodeCpt === 'goal' || trgNodeCpt === 'virtual resource' ||
+      trgNodeCpt === 'infrastructure node' || trgNodeCpt === 'physical infrastructure' ||
+      trgNodeCpt === 'cloud service')):
+        addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
+        break
       /*
       * Cloud shit
       */
