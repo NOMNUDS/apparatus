@@ -111,6 +111,10 @@ module.exports = function setup (cy) {
   cy.on('cxttapend', 'node', selection => {
     selectedNode = selection.target[0]
     editNode.formNode(selectedNode) // global module
+    // clear tokens
+    selectedNode.out = {}
+    oldSelectedNode = {}
+    selectedEdge.out = {}
   })
   // right clicking on edge
   cy.on('cxttapend', 'edge', selection => {
