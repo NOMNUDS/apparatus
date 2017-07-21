@@ -14,7 +14,7 @@ module.exports = function vulnVerification (cy) {
       node.addClass('attention')
       vulnArray.push(node)
     }
-    if (node.data().info.concept === 'mechanism') {
+    if (node.data().info.concept === 'security mechanism') {
       node.removeClass('faded')
       node.addClass('protect')
     }
@@ -24,9 +24,9 @@ module.exports = function vulnVerification (cy) {
     const neighbor = vuln.neighborhood()
     neighbor.map(type => {
       if (type.data().hasOwnProperty('info')) {
-        if (type.data().info.concept === 'mechanism') {
+        if (type.data().info.concept === 'security mechanism') {
           result = `${result} • Vulnerability ${vuln.data()
-            .id} mitigated by Mechanism ${type.data().id}\n`
+            .id} mitigated by Security Mechanism ${type.data().id}\n`
           mitigatedVulns += 1
         }
       }

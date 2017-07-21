@@ -12,6 +12,7 @@ module.exports = function overview (cy) {
   const applicationArray = sectrocloudMetamodel.application
   const infrastructureArray = sectrocloudMetamodel.infrastructure
   const cloudsecurityArray = sectrocloudMetamodel.cloudsecurity
+  const managementArray = sectrocloudMetamodel.management
 
   let result = ''
 
@@ -22,6 +23,7 @@ module.exports = function overview (cy) {
   let appNode = 0
   let infraNode = 0
   let cloudsecurityNode = 0
+  let managementNode = 0
 
   cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
@@ -33,12 +35,16 @@ module.exports = function overview (cy) {
       infraNode += 1
     } else if (cloudsecurityArray.includes(nodeConcept) === true) {
       cloudsecurityNode += 1
+    } else if (managementArray.includes(nodeConcept) === true) {
+      managementNode += 1
     }
   })
   result = `${result}• orgnanisational nodes: ${orgNode}\n`
   result = `${result}• application nodes: ${appNode}\n`
   result = `${result}• infrastructure nodes: ${infraNode}\n`
   result = `${result}• cloud security nodes: ${cloudsecurityNode}\n`
+  result = `${result}• management nodes: ${managementNode}\n`
+
 
   let actorNode = 0
   let cloudactorNode = 0

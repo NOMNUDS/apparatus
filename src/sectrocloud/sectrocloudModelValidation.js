@@ -16,6 +16,11 @@ module.exports = function moduleValidation (cy) {
   // const constraintArray = sectrocloudMetamodel.constraintArray
   // const threatArray = sectrocloudMetamodel.threatArray
   // const sensorArray = sectrocloudMetamodel.sensorArray
+  const organisational = sectrocloudMetamodel.organisational
+  const application = sectrocloudMetamodel.application
+  const infrastructure = sectrocloudMetamodel.infrastructure
+  const cloudsecurity = sectrocloudMetamodel.cloudsecurity
+  const management = sectrocloudMetamodel.management
   const goalArray = sectrocloudMetamodel.goalArray
   const actorArray = sectrocloudMetamodel.actorArray
 
@@ -61,6 +66,12 @@ module.exports = function moduleValidation (cy) {
   // componentValidation(cy, 'sensor', sensorArray)
   componentValidation(cy, 'goal', goalArray)
   componentValidation(cy, 'actor', actorArray)
+  componentValidation(cy, 'organisational', organisational)
+  componentValidation(cy, 'application', application)
+  componentValidation(cy, 'infrastructure', infrastructure)
+  componentValidation(cy, 'cloudsecurity', cloudsecurity)
+  componentValidation(cy, 'management', management)
+
 
   printChat(result)
 }
