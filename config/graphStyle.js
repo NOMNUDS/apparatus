@@ -8,15 +8,9 @@ graphStyle.style = [{
   selector: 'node',
   style: {
     shape: 'ellipse',
-<<<<<<< HEAD
-    'background-color': config.white,
-    // 'text-wrap': 'wrap',
-    // 'text-max-width': '100px'
-=======
     'background-color': config.white
     // 'text-wrap': 'wrap',
     // 'text-max-width': '50px'
->>>>>>> a5b7c2ef936252967a3578a680e3cf67bddd5055
   }
 }, {
   selector: 'edge',
