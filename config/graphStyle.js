@@ -9,6 +9,8 @@ graphStyle.style = [{
   style: {
     shape: 'ellipse',
     'background-color': config.white
+    // 'text-wrap': 'wrap',
+    // 'text-max-width': '50px'
   }
 }, {
   selector: 'edge',
@@ -131,7 +133,9 @@ graphStyle.style = [{
       height: 'label',
       padding: '10px',
       'border-width': '3',
-      'background-color': config.green
+      'background-color': config.green,
+      // 'text-wrap': 'wrap',
+      // 'text-max-width': '10px'
     }
   }, {
     selector: '.plan',
