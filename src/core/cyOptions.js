@@ -13,7 +13,9 @@ module.exports = function cyOptions (cy, file) {
     zoom: 1,
     wheelSensitivity: 0.1,
     minZoom: 0.1,
-    maxZoom: 5
+    maxZoom: 5,
+    pan: { x: 800, y: 400 }
+
   })
   // graph layout
   const layout = cy.out.layout({
