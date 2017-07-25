@@ -9,7 +9,11 @@ module.exports = function cyOptions (cy, file) {
     container: document.getElementById('graph-container'),
     autounselectify: true,
     elements: model.elements, // loads the elements object of the graph
-    style: graphStyle.style
+    style: graphStyle.style,
+    zoom: 1,
+    wheelSensitivity: 0.1,
+    minZoom: 0.1,
+    maxZoom: 5
   })
   // graph layout
   const layout = cy.out.layout({
