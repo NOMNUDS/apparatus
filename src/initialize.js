@@ -121,6 +121,10 @@ module.exports = function setup (cy) {
   cy.on('cxttapend', 'edge', selection => {
     selectedEdge = selection.target[0]
     editEdge.formEdge(selectedEdge) // global module
+    // clear tokens
+    selectedNode.out = {}
+    oldSelectedNode.out = {}
+    selectedEdge.out = {}
   })
   // do stuff when hovering over a node
   cy.on('mouseover', 'node', event => {
