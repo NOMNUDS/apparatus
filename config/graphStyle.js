@@ -114,7 +114,7 @@ graphStyle.style = [{
 
 
 
-  // Old cloud shit
+  // Old cloud
 }, {
     selector: '.actor',
     style: {

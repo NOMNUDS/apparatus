@@ -15,7 +15,7 @@ module.exports = function addComponent (
   if (e === 'connection') {
     switch (true) {
       /*
-      * Sectro shit
+      * Sectro
       */
       //  dependency(A|G,A|G)
       case ((srcNodeCpt === 'actor' || srcNodeCpt === 'cloud actor' ||
@@ -80,7 +80,7 @@ module.exports = function addComponent (
         addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
         break
       /*
-      * Cloud shit
+      * Cloud
       */
       //permeates(VR|IN, VR|PI|IN)
       case (srcNodeCpt === 'virtural resource' && (trgNodeCpt === 'infrastructure node' ||

@@ -71,7 +71,7 @@ module.exports = function moduleSelection (cy, input) {
       groupArray = networkArray.concat(socialArray)
       break
 
-    // sectrocloud shit
+    // sectrocloud
     case 'goal':
       groupArray = goalArray
       break
